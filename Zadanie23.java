@@ -10,8 +10,9 @@ import java.util.regex.Pattern;
 public class Zadanie23 {
 
         public static void main(String[] args) {
-            String str="sdfdf weffef errgegre <p id=p1> gghh ffg gggbgf";
-            System.out.println(str.replaceAll("<p id=p1>", "<p>"));
+            String regex = "(<p .+?>)(.+?</p>)";
+            String str="<p>sdfdf weffef errgegre </p> gghh <p id=\"p1\">ffg gggbgf</p>";
+            System.out.println(str.replaceAll(regex, "<p>$2"));
 
             }
         }

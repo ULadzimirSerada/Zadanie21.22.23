@@ -10,11 +10,18 @@ import java.util.regex.Pattern;
 public class Zadanie22 {
 
         public static void main(String[] args) {
-            String str = "0x5DCA  0X55VV67 0dFF76 0X0AA";
-               Pattern pattern = Pattern.compile("0x\\p{XDigit}+|0X\\p{XDigit}+");//\p{XDigit}	A hexadecimal digit: [0-9a-fA-F]
+            /*String str = "0x5DCA  0X55VV67 0dFF76 0X0AA";
+               Pattern pattern = Pattern.compile("0[Xx][0-9a-fA-F]+";//("0x\\p{XDigit}+|0X\\p{XDigit}+");//\p{XDigit}	A hexadecimal digit: [0-9a-fA-F]
                Matcher matcher = pattern.matcher(str);
              while(matcher.find()){
-                System.out.println(matcher.group()) ;         
+                System.out.println(matcher.group()) ; */
+					
+					String str = "0x5DCA  0X55VV67 0dFF76 0X0AA";
+            String regex = "0[Xx][0-9a-fA-F]+";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(str);
+            while(matcher.find()){
+                System.out.println(matcher.group()) ;
             }
         }
     }
